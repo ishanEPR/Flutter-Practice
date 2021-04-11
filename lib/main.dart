@@ -16,19 +16,33 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       locale: DevicePreview.locale(context), // Add the locale here
       builder: DevicePreview.appBuilder, // Add the builder here
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Welcome to new web site"),
-          centerTitle: true,
-          shadowColor:Colors.black,
-          backgroundColor: Colors.black12,
-        ),
-        body: Center(
-          child: Text("Hello world",style:TextStyle(fontSize: 20.0,),),
-        ),
+      title:'Hello ishan',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: HomePage(),
     );
 
   }
 
+}
+class HomePage extends  StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter'),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: (){},
+        ),
+        actions: [
+          IconButton(icon: Icon(Icons.search), onPressed:(){}),
+          IconButton(icon: Icon(Icons.more_vert), onPressed:(){}),
+
+        ],
+        flexibleSpace:Image.asset("assests/ishan.png",fit: BoxFit.cover,),
+      ),
+    );
+  }
 }
