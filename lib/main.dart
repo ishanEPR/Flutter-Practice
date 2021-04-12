@@ -1,48 +1,132 @@
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
+// import 'package:flutter/material.dart';
+// import 'package:device_preview/device_preview.dart';
+//
+// void main(){
+//   runApp(
+//     DevicePreview(
+//       enabled: !kReleaseMode,
+//       builder: (context) => MyApp(), // Wrap your app
+//     ),
+//   );
+// }
+// class MyApp extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       locale: DevicePreview.locale(context), // Add the locale here
+//       builder: DevicePreview.appBuilder, // Add the builder here
+//
+//       title:'Hello ishan',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: HomePage(),
+//     );
+//
+//   }
+//
+// }
+// class HomePage extends  StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Flutter'),
+//         leading: IconButton(
+//           icon: Icon(Icons.menu),
+//           onPressed: (){},
+//         ),
+//         actions: [
+//           IconButton(icon: Icon(Icons.search), onPressed:(){}),
+//           IconButton(icon: Icon(Icons.more_vert), onPressed:(){}),
+//
+//         ],
+//         flexibleSpace:Image.asset("assests/ishan.png",fit: BoxFit.cover,),
+//       ),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
 
 void main(){
-  runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => MyApp(), // Wrap your app
-    ),
-  );
+  runApp(MyApp());
+
 }
+
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.locale(context), // Add the locale here
-      builder: DevicePreview.appBuilder, // Add the builder here
-      title:'Hello ishan',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
-
   }
 
 }
-class HomePage extends  StatelessWidget {
+
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter'),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: (){},
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter'),
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: (){},
+          ),
+          actions: [
+            IconButton(icon: Icon(Icons.search), onPressed:(){}),
+            IconButton(icon: Icon(Icons.more_vert), onPressed:(){}),
+          ],
+          //flexibleSpace: Image.asset("assests/ishan.png",fit: BoxFit.cover,),
+          bottom:TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car),text: "Car",),
+              Tab(icon: Icon(Icons.directions_train),),
+              Tab(icon: Icon(Icons.directions_bike),),
+            ],
+          ),
+          elevation: 22.0,
+          backgroundColor: Colors.blue,
         ),
-        actions: [
-          IconButton(icon: Icon(Icons.search), onPressed:(){}),
-          IconButton(icon: Icon(Icons.more_vert), onPressed:(){}),
+        body: TabBarView(
+          children: [
+           tab1(),
+            Icon(Icons.directions_train),
+            Icon(Icons.directions_bike),
+          ],
+        ),
 
-        ],
-        flexibleSpace:Image.asset("assests/ishan.png",fit: BoxFit.cover,),
       ),
     );
   }
 }
+Widget tab1(){
+  return Container(
+    child: Center(
+      child: Text('Ishan Reshmika'),
+    ),
+  );
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
