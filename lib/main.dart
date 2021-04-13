@@ -114,51 +114,180 @@
 //
 // }
 
+// import 'package:flutter/material.dart';
+//
+// void main(){
+//   runApp(MyApp());
+// }
+//  class MyApp extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//    return MaterialApp(
+//      debugShowCheckedModeBanner: false,
+//      theme: ThemeData(
+//        brightness: Brightness.light,
+//        primarySwatch: Colors.orange,
+//
+//
+//      ),
+//      home: MyHomePage(),
+//    );
+//   }
+//
+//  }
+//
+//  class MyHomePage extends StatelessWidget {
+//    @override
+//    Widget build(BuildContext context) {
+//      return Scaffold(
+//        appBar: AppBar(
+//          title:Text("Hello Ishan"),
+//        ),
+//        body: Container(
+//         // height: 300.0,
+//          margin: EdgeInsets.only(top: 10.0,left: 20.0,right: 20.0,bottom: 10.0),
+//        //  padding: EdgeInsets.all(20.0),
+//          padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 40.0),
+//          transform: Matrix4.rotationZ(0.1),
+//          alignment: Alignment.bottomLeft,
+//          width: double.infinity,
+//          color: Colors.pinkAccent,
+//          child: Text("Hello Ishan",style: TextStyle(fontSize: 40.0),),
+//        ),
+//
+//      );
+//    }
+//  }
+
+
 import 'package:flutter/material.dart';
 
 void main(){
   runApp(MyApp());
 }
- class MyApp extends StatelessWidget{
+
+class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
-     debugShowCheckedModeBanner: false,
-     theme: ThemeData(
-       brightness: Brightness.light,
-       primarySwatch: Colors.orange,
-
-
-     ),
-     home: MyHomePage(),
-   );
+  return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyHomePage(),
+  );
   }
 
- }
+}
+class MyHomePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+  return DefaultTabController(
+    length: 3,
+    child: Scaffold(
 
- class MyHomePage extends StatelessWidget {
-   @override
-   Widget build(BuildContext context) {
-     return Scaffold(
-       appBar: AppBar(
-         title:Text("Hello Ishan"),
-       ),
-       body: Container(
-        // height: 300.0,
-         margin: EdgeInsets.only(top: 10.0,left: 20.0,right: 20.0,bottom: 10.0),
-       //  padding: EdgeInsets.all(20.0),
-         padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 40.0),
-         transform: Matrix4.rotationZ(0.1),
-         alignment: Alignment.bottomLeft,
-         width: double.infinity,
-         color: Colors.pinkAccent,
-         child: Text("Hello Ishan",style: TextStyle(fontSize: 40.0),),
-       ),
+      appBar: AppBar(
 
-     );
-   }
- }
- 
+        title: Text('Welcome to website'),
+        leading:IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: (){},
+        ),
+        actions: [
+          IconButton(icon: Icon(Icons.search), onPressed:(){}),
+          IconButton(icon: Icon(Icons.more_vert), onPressed: (){})
+        ],
+        bottom: TabBar(
+          tabs: [
+            Tab(icon: Icon(Icons.directions_car),),
+            Tab(icon: Icon(Icons.directions_train),),
+            Tab(icon: Icon(Icons.directions_bike),),
+          ],
+        ),
+
+      ),
+      body: TabBarView(
+        children: [
+          tab1(),
+          tab2(),
+          tab3(),
+
+        ],
+
+      ),
+    ),
+  );
+  }
+
+}
+
+Widget tab1(){
+
+  return Container(
+
+       // child:  Text('Ishan',style: TextStyle(fontSize: 20.0,),),
+
+        child: Column(
+
+          mainAxisAlignment:MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+
+          children: [
+            Text('Ishan'),
+            Text('Ishan'),
+            Text('Ishan'),
+            Text('Ishan'),
+            Text('Ishan'),
+
+
+          ],
+
+        ),
+
+
+
+  );
+}
+Widget tab2(){
+  return Container(
+
+
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center ,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Ishan'),
+        Text('Ishan'),
+        Text('Ishan'),
+      ],
+    ),
+  );
+}
+Widget tab3(){
+  return Container(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Ishan'),
+        Text('Ishan'),
+        Text('Ishan'),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text('Ishan'),
+            Text('Ishan'),
+            Text('Ishan'),
+          ],
+        ),
+
+      ],
+
+    ),
+  );
+}
+
+
+
+
+
 
 
 
