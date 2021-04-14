@@ -180,12 +180,12 @@ class MyHomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
   return DefaultTabController(
-    length: 3,
+    length: 4,
     child: Scaffold(
 
       appBar: AppBar(
 
-        title: Text('Welcome to website'),
+        title: Text('Welcome to Ishan'),
         leading:IconButton(
           icon: Icon(Icons.menu),
           onPressed: (){},
@@ -199,6 +199,7 @@ class MyHomePage extends StatelessWidget{
             Tab(icon: Icon(Icons.directions_car),),
             Tab(icon: Icon(Icons.directions_train),),
             Tab(icon: Icon(Icons.directions_bike),),
+            Tab(icon: Icon(Icons.photo),),
           ],
         ),
 
@@ -208,6 +209,7 @@ class MyHomePage extends StatelessWidget{
           tab1(),
           tab2(),
           tab3(),
+          Icon(Icons.photo),
 
         ],
 
@@ -283,34 +285,6 @@ Widget tab3(){
     ),
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
