@@ -353,9 +353,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Navigation",
       home: HomePage(),
-      routes:<String,WidgetBuilder>{
-        '/second':(context)=>Second_page(),
-      },
+      // routes:<String,WidgetBuilder>{
+      //   '/second':(context)=>Second_page(),
+      // },
     );
 
   }

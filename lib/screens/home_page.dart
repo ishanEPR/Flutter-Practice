@@ -31,11 +31,11 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
-          // Navigator.of(context).push(MaterialPageRoute(builder:(_){
-          //   return Second_page();
-          // }));
+          Navigator.of(context).push(MaterialPageRoute(builder:(_){
+            return Second_page("Ishan");
+          }));
           
-          Navigator.of(context).pushNamed("/second");
+       //   Navigator.of(context).pushNamed("/second");
         },
       ),
     );
