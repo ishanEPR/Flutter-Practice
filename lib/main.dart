@@ -340,6 +340,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/second_page.dart';
 
 import 'screens/home_page.dart';
 
@@ -352,7 +353,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Navigation",
       home: HomePage(),
+      routes:<String,WidgetBuilder>{
+        '/second':(context)=>Second_page(),
+      },
     );
+
   }
 }
 
