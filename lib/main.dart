@@ -160,131 +160,212 @@
 //  }
 
 
+// import 'package:flutter/material.dart';
+//
+// void main(){
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//   return MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     home: MyHomePage(),
+//   );
+//   }
+//
+// }
+// class MyHomePage extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//   return DefaultTabController(
+//     length: 4,
+//     child: Scaffold(
+//
+//       appBar: AppBar(
+//
+//         title: Text('Welcome to Ishan'),
+//         leading:IconButton(
+//           icon: Icon(Icons.menu),
+//           onPressed: (){},
+//         ),
+//         actions: [
+//           IconButton(icon: Icon(Icons.search), onPressed:(){}),
+//           IconButton(icon: Icon(Icons.more_vert), onPressed: (){})
+//         ],
+//         bottom: TabBar(
+//           tabs: [
+//             Tab(icon: Icon(Icons.directions_car),),
+//             Tab(icon: Icon(Icons.directions_train),),
+//             Tab(icon: Icon(Icons.directions_bike),),
+//             Tab(icon: Icon(Icons.photo),),
+//           ],
+//         ),
+//
+//       ),
+//       body: TabBarView(
+//         children: [
+//           tab1(),
+//           tab2(),
+//           tab3(),
+//           Icon(Icons.photo),
+//
+//         ],
+//
+//       ),
+//     ),
+//   );
+//   }
+//
+// }
+//
+// Widget tab1(){
+//
+//   return Container(
+//
+//        // child:  Text('Ishan',style: TextStyle(fontSize: 20.0,),),
+//
+//         child: Column(
+//
+//           mainAxisAlignment:MainAxisAlignment.start,
+//           crossAxisAlignment: CrossAxisAlignment.end,
+//
+//           children: [
+//             Text('Ishan'),
+//             Text('Ishan'),
+//             Text('Ishan'),
+//             Text('Ishan'),
+//             Text('Ishan'),
+//
+//
+//           ],
+//
+//         ),
+//
+//
+//
+//   );
+// }
+// Widget tab2(){
+//   return Container(
+//
+//
+//     child: Row(
+//       mainAxisAlignment: MainAxisAlignment.center ,
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Text('Ishan'),
+//         Text('Ishan'),
+//         Text('Ishan'),
+//       ],
+//     ),
+//   );
+// }
+// Widget tab3(){
+//   return Container(
+//     child: Row(
+//       mainAxisAlignment: MainAxisAlignment.start,
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Text('Ishan'),
+//         Text('Ishan'),
+//         Text('Ishan'),
+//         Column(
+//           mainAxisAlignment: MainAxisAlignment.start,
+//           children: [
+//             Text('Ishan'),
+//             Text('Ishan'),
+//             Text('Ishan'),
+//           ],
+//         ),
+//
+//       ],
+//
+//     ),
+//   );
+// }
+
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(MyApp());
+  runApp(App());
 }
-
-class MyApp extends StatelessWidget{
+class App extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-  return MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MyHomePage(),
-  );
+   return MaterialApp(
+     title: "Flutter tutorial",
+     home: HomePage(),
+   );
   }
 
 }
-class MyHomePage extends StatelessWidget{
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int count=0;
+  void increment(){
+    setState(() {
+      count=count+1;
+      print(count);
+    });
+
+  }
   @override
   Widget build(BuildContext context) {
-  return DefaultTabController(
-    length: 4,
-    child: Scaffold(
-
+    return Scaffold(
       appBar: AppBar(
-
-        title: Text('Welcome to Ishan'),
-        leading:IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: (){},
-        ),
-        actions: [
-          IconButton(icon: Icon(Icons.search), onPressed:(){}),
-          IconButton(icon: Icon(Icons.more_vert), onPressed: (){})
-        ],
-        bottom: TabBar(
-          tabs: [
-            Tab(icon: Icon(Icons.directions_car),),
-            Tab(icon: Icon(Icons.directions_train),),
-            Tab(icon: Icon(Icons.directions_bike),),
-            Tab(icon: Icon(Icons.photo),),
-          ],
-        ),
-
+        title: Text("Welcome to search",style: TextStyle(fontSize: 20.0),),
       ),
-      body: TabBarView(
-        children: [
-          tab1(),
-          tab2(),
-          tab3(),
-          Icon(Icons.photo),
-
-        ],
-
-      ),
-    ),
-  );
-  }
-
-}
-
-Widget tab1(){
-
-  return Container(
-
-       // child:  Text('Ishan',style: TextStyle(fontSize: 20.0,),),
-
+      body:Center(
         child: Column(
-
-          mainAxisAlignment:MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Ishan'),
-            Text('Ishan'),
-            Text('Ishan'),
-            Text('Ishan'),
-            Text('Ishan'),
-
-
-          ],
-
-        ),
-
-
-
-  );
-}
-Widget tab2(){
-  return Container(
-
-
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center ,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('Ishan'),
-        Text('Ishan'),
-        Text('Ishan'),
-      ],
-    ),
-  );
-}
-Widget tab3(){
-  return Container(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('Ishan'),
-        Text('Ishan'),
-        Text('Ishan'),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text('Ishan'),
-            Text('Ishan'),
-            Text('Ishan'),
+            Text("you have pushed button times",style: TextStyle(fontSize: 25.0),),
+            Text("$count",style: Theme.of(context).textTheme.display1,),
           ],
         ),
+      ),
+      floatingActionButton:FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed:increment,
 
-      ],
-
-    ),
-  );
+      ) ,
+    );
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
