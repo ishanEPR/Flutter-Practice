@@ -32,77 +32,26 @@ class Second_page extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
+    var items=List<String>.generate(100, (index) => 'item: $index');
     return Scaffold(
       appBar: AppBar(
         title: Text('ListView Tutorial'),
       ),
       body: Container(
      //   height: 150.0,
-        child: ListView(
-          //scrollDirection: Axis.horizontal,///horizontal vidihata listview create kirima
-          children: [
-            ListTile(
-              leading: Icon(Icons.brightness_auto),
-              title: Text('Brightness Auto'),
-              subtitle: Text('Change the brightness'),
-              trailing: Icon(Icons.menu),
-              onTap: (){},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.photo),
-              title: Text('Brightness Auto'),
-              subtitle: Text('Change the brightness'),
-              trailing: Icon(Icons.menu),
-              onTap: (){},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.keyboard),
-              title: Text('Brightness Auto'),
-              subtitle: Text('Change the brightness'),
-              trailing: Icon(Icons.menu),
-              onTap: (){},
-            ),
-            Divider(),
+        child: ListView.builder(
+          itemCount:items.length ,
+          itemBuilder: (context,index){
+            return  ListTile(
+              title: Text(items[index]),
+            );
+          },
 
-            ListTile(
-              leading: Icon(Icons.ring_volume),
-              title: Text('Ringing'),
-              subtitle: Text('Hello Ishan'),
-              trailing: Icon(Icons.menu),
-              onTap: (){},
-            ),
-            Divider(),
-
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              subtitle: Text('change settings'),
-              trailing: Icon(Icons.menu),
-              onTap: (){},
-            ),
-            Divider(),
-
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Near'),
-            ),
-
-
-
-
-
-            ListTile(
-              leading: Icon(Icons.backup),
-              title: Text('Brightness Auto'),
-
-              onTap: (){},
-            ),
-
-          ],
         ),
-      ),
+          //scrollDirection: Axis.horizontal,///horizontal vidihata listview create kirima
+
+        ),
+
     );
   }
 }
