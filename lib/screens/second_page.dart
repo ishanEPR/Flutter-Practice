@@ -37,7 +37,7 @@ class Second_page extends StatelessWidget {
         title: Text('ListView Tutorial'),
       ),
       body: Container(
-        height: 150.0,
+     //   height: 150.0,
         child: ListView(
           //scrollDirection: Axis.horizontal,///horizontal vidihata listview create kirima
           children: [
@@ -67,45 +67,38 @@ class Second_page extends StatelessWidget {
             Divider(),
 
             ListTile(
-              leading: Icon(Icons.keyboard),
-              title: Text('Key board'),
+              leading: Icon(Icons.ring_volume),
+              title: Text('Ringing'),
               subtitle: Text('Hello Ishan'),
               trailing: Icon(Icons.menu),
               onTap: (){},
             ),
             Divider(),
 
-            // ListTile(
-            //   leading: Icon(Icons.ring_volume_sharp),
-            //   title: Text('Brightness Auto'),
-            //   subtitle: Text('Change the brightness'),
-            //   trailing: Icon(Icons.menu),
-            //   onTap: (){},
-            // ),
-            // Divider(),
-            //
-            // ListTile(
-            //   leading: Icon(Icons.settings),
-            //   title: Text('Brightness Auto'),
-            //   subtitle: Text('Change the brightness'),
-            //   trailing: Icon(Icons.menu),
-            //   onTap: (){},
-            // ),
-            // Divider(),
-            // ListTile(
-            //   leading: Icon(Icons.place),
-            //   title: Text('Brightness Auto'),
-            //
-            //   onTap: (){},
-            // ),
-            // Divider(),
-            //
-            // ListTile(
-            //   leading: Icon(Icons.backup),
-            //   title: Text('Brightness Auto'),
-            //
-            //   onTap: (){},
-            // ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              subtitle: Text('change settings'),
+              trailing: Icon(Icons.menu),
+              onTap: (){},
+            ),
+            Divider(),
+
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Near'),
+            ),
+
+
+
+
+
+            ListTile(
+              leading: Icon(Icons.backup),
+              title: Text('Brightness Auto'),
+
+              onTap: (){},
+            ),
 
           ],
         ),
