@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/home_page.dart';
+
+import 'form.dart';
 // class Second_page extends StatelessWidget {
 //   String text;
 //   Second_page(String text){
@@ -43,7 +45,14 @@ class Second_page extends StatelessWidget {
           itemCount:items.length ,
           itemBuilder: (context,index){
             return  ListTile(
+              leading: Icon(Icons.backup),
               title: Text(items[index]),
+
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (_){
+                  return Formdata(index.toString());
+                }));
+              },
             );
           },
 
