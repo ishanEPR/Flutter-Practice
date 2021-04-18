@@ -6,9 +6,14 @@ class Formdata extends StatelessWidget {
   Formdata(String data){
     this.data=data;
   }
+  TextEditingController title=TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
+   // title.text='ishan';
+    String data1=title.text;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Form data $data'),
@@ -33,6 +38,19 @@ class Formdata extends StatelessWidget {
                 obscureText: true,
                 cursorColor: Colors.black,
 
+                //onchange method - get the input data
+                // onChanged:(text){
+                //   print(text);
+                // } ,
+
+                //onsubmitted
+                // onSubmitted: (text){
+                //   print(text);
+                // },
+
+                //controller
+                controller: title,
+
               ),
             ),
             Padding(padding: const EdgeInsets.all(20.0),
@@ -43,6 +61,8 @@ class Formdata extends StatelessWidget {
                 fontSize: 20.0,
               ),
               //enabled: false,
+
+              controller: title,
 
             ),
 
