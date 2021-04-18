@@ -16,7 +16,34 @@ class Formdata extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form data $data'),
+        title: TextField(
+          keyboardType: TextInputType.text,
+          controller: title,
+          decoration: InputDecoration(
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            suffixIcon: IconButton(
+              icon: Icon(
+                Icons.close,
+                color: Colors.white,
+
+              ),
+              onPressed: (){
+                title.text='';
+              },
+
+            ),
+            border: InputBorder.none,
+            filled: true,
+            hintText: 'Search',
+            hintStyle: TextStyle(color: Colors.white70),
+
+          ),
+
+
+        ),
       ),
       body: Center(
 
