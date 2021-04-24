@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/second_page.dart';
 
+import 'Asyncronus.dart';
 import 'new_form.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,6 +36,13 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('Flutter Navigation', style: TextStyle(fontSize: 25.0),),
+
+            RaisedButton(onPressed: (){
+               Text('Click Me');
+              Navigator.of(context).push(MaterialPageRoute(builder: (_){
+                return Async_page();
+              }));
+            })
 
           ],
         ),
