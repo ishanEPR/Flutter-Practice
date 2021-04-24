@@ -8,7 +8,8 @@ class _Async_pageState extends State<Async_page> {
  Future<String>  getData() async {
    String email=await Future.delayed(Duration(seconds: 3),(){
       //print('ishan@gmail.com');
-     return "ishan@gmail.com";
+   //  return "ishan@gmail.com";
+     throw Exception("Server Down");
     });
 
    return email;
